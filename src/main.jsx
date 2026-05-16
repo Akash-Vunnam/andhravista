@@ -6,6 +6,7 @@ import './index.css'
 import { ThemeProvider } from './contexts/ThemeProvider'
 import AppRoutes from './routes/AppRoutes'
 import BootFallback from './components/BootFallback'
+import { Analytics } from '@vercel/analytics/react'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,5 +19,6 @@ createRoot(document.getElementById('root')).render(
         </ThemeProvider>
       </BrowserRouter>
     </HelmetProvider>
+    <Analytics />
   </StrictMode>,
 )
