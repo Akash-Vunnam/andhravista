@@ -7,6 +7,7 @@ import { ThemeProvider } from './contexts/ThemeProvider'
 import AppRoutes from './routes/AppRoutes'
 import BootFallback from './components/BootFallback'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,5 +21,6 @@ createRoot(document.getElementById('root')).render(
       </BrowserRouter>
     </HelmetProvider>
     <Analytics />
+    <SpeedInsights />
   </StrictMode>,
 )
