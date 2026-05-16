@@ -1,0 +1,22 @@
+import { StrictMode, Suspense } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import './index.css'
+import { ThemeProvider } from './contexts/ThemeProvider'
+import AppRoutes from './routes/AppRoutes'
+import BootFallback from './components/BootFallback'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ThemeProvider>
+          <Suspense fallback={<BootFallback />}>
+            <AppRoutes />
+          </Suspense>
+        </ThemeProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </StrictMode>,
+)

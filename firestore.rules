@@ -1,0 +1,9 @@
+rules_version='2'
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /contactMessages/{message} {
+      allow read, write: if true;
+    }
+  }
+}
